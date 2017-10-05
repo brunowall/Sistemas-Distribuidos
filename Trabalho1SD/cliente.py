@@ -8,8 +8,8 @@ def cliente():
         connection.connect((ip,int(port)))
         print ("Conectado!")
         while True:
-            command = raw_input("Digite um comando")
-            if(command=="/CLOSE"):
+            command = raw_input("Digite um comando: ")
+            if(command=="\CLOSE"):
                 print("Encerrando o cliente...")
                 connection.close()
                 exit(0)

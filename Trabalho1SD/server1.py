@@ -21,9 +21,9 @@ def server():
             nrequest +=1
 
             try:
-                if(request == "/REQNUM"):
+                if(request == "\REQNUM"):
                     socket_cliente.send("Numero de requisicoes: "+str(nrequest))
-                elif(request == "/UPTIME"):
+                elif(request == "\UPTIME"):
                     tempo_exec = datetime.datetime.utcnow() - time
                     hours  = tempo_exec.seconds/3600
                     minutes = (tempo_exec.seconds % 3600)/60

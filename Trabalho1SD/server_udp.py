@@ -13,9 +13,9 @@ def main():
     while True:
         msg, address = socket_udp.recvfrom(1024)
         nrequest +=1
-        if(msg == "/REQNUM"):
+        if(msg == "\REQNUM"):
             socket_udp.sendto("Numero de requisicoes: "+str(nrequest),address)
-        elif(msg == "/UPTIME"):
+        elif(msg == "\UPTIME"):
             tempo_exec = datetime.datetime.utcnow() - time
             hours  = tempo_exec.seconds/3600
             minutes = (tempo_exec.seconds % 3600)/60
