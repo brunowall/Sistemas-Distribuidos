@@ -11,8 +11,10 @@ def main():
   t1.start()
 
   while True:
-    mensagem = raw_input()
-    con.send(mensagem)
+     mensagem = raw_input()
+     t2 = threading.Thread(target=con.send,args=[mensagem])
+     t2.start()
+
 
 def listen_print(socket):
     while True:
