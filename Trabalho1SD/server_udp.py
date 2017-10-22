@@ -5,7 +5,7 @@ def main():
     nrequest = 0
     time = datetime.datetime.utcnow() # salva o tempo atual
 
-    socket_udp = socket.socket(socket.AF_INET,socket.SOCK_DGRAM) #cria porta udp
+    socket_udp = socket.socket(socket.AF_INET,socket.SOCK_DGRAM) #cria socket udp
     port  = raw_input("Digite a porta que o servidor ira rodar")
 
     socket_udp.bind(("localhost",int(port)))

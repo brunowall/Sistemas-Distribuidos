@@ -16,6 +16,8 @@ def main():
 def listen_print(socket):
     while True:
          msg = socket.recv(2048)
-         print ("Participante 1: "+msg)
-
+         if len(msg)==0:
+            pass
+         else:
+             print ("Participante 1: "+msg)
 main()
