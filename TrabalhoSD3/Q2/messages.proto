@@ -1,0 +1,18 @@
+syntax="proto3";
+
+enum Tipo {
+  IMPRESSAO = 0;
+  CALCULADORA = 1;
+  SOM = 2;
+  PROJETOR = 3;
+}
+
+message Request {
+   int32 id = 1;
+   Tipo op = 4;
+}
+
+message Reply {
+  int32 id = 1;
+  Tipo res = 4;
+}
