@@ -14,5 +14,6 @@ message Request {
 
 message Reply {
   int32 id = 1;
-  Tipo res = 4;
+  int32 port = 2;
+  string ip = 3;
 }

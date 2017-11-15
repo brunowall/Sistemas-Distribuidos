@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='messages.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0emessages.proto\"(\n\x07Request\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x02op\x18\x04 \x01(\x0e\x32\x05.Tipo\"\'\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x12\n\x03res\x18\x04 \x01(\x0e\x32\x05.Tipo*=\n\x04Tipo\x12\r\n\tIMPRESSAO\x10\x00\x12\x0f\n\x0b\x43\x41LCULADORA\x10\x01\x12\x07\n\x03SOM\x10\x02\x12\x0c\n\x08PROJETOR\x10\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x0emessages.proto\"(\n\x07Request\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x02op\x18\x04 \x01(\x0e\x32\x05.Tipo\"-\n\x05Reply\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\n\n\x02ip\x18\x03 \x01(\t*=\n\x04Tipo\x12\r\n\tIMPRESSAO\x10\x00\x12\x0f\n\x0b\x43\x41LCULADORA\x10\x01\x12\x07\n\x03SOM\x10\x02\x12\x0c\n\x08PROJETOR\x10\x03\x62\x06proto3')
 )
 
 _TIPO = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _TIPO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=101,
-  serialized_end=162,
+  serialized_start=107,
+  serialized_end=168,
 )
 _sym_db.RegisterEnumDescriptor(_TIPO)
 
@@ -114,9 +114,16 @@ _REPLY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='res', full_name='Reply.res', index=1,
-      number=4, type=14, cpp_type=8, label=1,
+      name='port', full_name='Reply.port', index=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Reply.ip', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -133,11 +140,10 @@ _REPLY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=60,
-  serialized_end=99,
+  serialized_end=105,
 )
 
 _REQUEST.fields_by_name['op'].enum_type = _TIPO
-_REPLY.fields_by_name['res'].enum_type = _TIPO
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Reply'] = _REPLY
 DESCRIPTOR.enum_types_by_name['Tipo'] = _TIPO
